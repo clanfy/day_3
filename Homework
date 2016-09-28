@@ -94,13 +94,44 @@ C. Given the following data structure:
     },
   }
 Return Jonathan's Twitter handle (i.e. the string "jonnyt")
+puts users["Jonathan"][:twitter]
+
 Return Erik's hometown
-Return the array of Erik's favorite numbers
-Return the type of Avril's pet Colin
-Return the smallest of Erik's favorite numbers
-Return an array of Avril's favorite numbers that are even
+puts users["Erik"][:home_town]
+
+Return the array of Erik's favourite numbers
+print users["Erik"][:favorite_number]
+
+Return the type of Avril's pet Sssteven
+puts users["Avril"][:pets][:sssteven]
+
+
+Return the smallest of Erik's favourite numbers
+puts users["Erik"][:favorite_numbers].min
+
+Return an array of Avril's favourite numbers that are even
+puts users["Avril"][:favourite_numbers].select(&:even?)
+
 Return an array of Jonathans favourite numbers, sorted in ascending order and excluding duplicates
-Add the number 7 to Erik's favorite numbers
+print users["Jonathan"][:favourite_numbers].sort.uniq
+
+Add the number 7 to Erik's favourite numbers
+eriks_favourite_numbers = users["Erik"][:favourite_numbers]
+eriks_favourite_numbers.push(7)
+
 Change Erik's hometown to Edinburgh
+users["Erik"][:home_town] = "Edinburgh"
+
 Add a pet dog to Erik called "Fluffy"
+users["Erik"][:pets][:fluffy] = "dog"
+
 Add yourself to the users hash
+users["Cookie"] = {
+  :twitter => "clanfy",
+  :favourite_numbers => [2,13,9,31,69],
+  :home_town => "Vancouver",
+  :pets => {
+    :pants => "hampster",
+    :dougall => "dog"
+  }
+}
